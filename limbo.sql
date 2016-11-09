@@ -81,19 +81,19 @@ INSERT INTO locations (create_date, update_date, name)
 			(NOW(), NOW(), "Murray Student Center/Music Building"),
 			(NOW(), NOW(), "Lower West Cedar Townhouses"),
 			(NOW(), NOW(), "Upper West Cedar Townhouse");
-			#'YYYY-MM-DD'
 			
 INSERT INTO stuff(location_id, description, found_date, create_date, update_date, room, owner_name, finder_name, status)
-	VALUES (5, "Black shiny Ray-Ban sunglasses", '2016-03-25', NOW() , NOW(), "236", "", "Snoopy", "Lost")
-	VALUES (6, "Red Chanel leather bag", '2016-02-14', NOW() , NOW(), "319", "", "Lucy", "Lost")
-	VALUES (10, "Rose Gold iPhone 6 Plus with clear case", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Cool Joe", "Found")
-	VALUES (12, "Kinky Boots plastic cup", '2014-01-25', NOW() , NOW(), "131", "", "Zika", "Lost")
-	VALUES (16, "Black Lenovo Yoga laptop", '2016-03-25', NOW() , NOW(), "234", "Charlie", "Lucy", "Found")
-	VALUES (17, "White Galaxy Notes 7", '2016-03-25', NOW() , NOW(), "216", "Wendy", "Cool Joe", "Found")
-	VALUES (11, "Pink JBL wireless headset", '2016-03-25', NOW() , NOW(), "N/A", "", "Cool Joe", "Lost")
-	VALUES (7, "Brown Chanel leather bag", '2016-03-25', NOW() , NOW(), "234", "Sam", "Sung", "Found")
-	VALUES (1, "Yellow long umbrella", '2016-03-25', NOW() , NOW(), "142", "", "Peter", "Lost")
-	VALUES (3, "Green slippers", '2016-03-25', NOW() , NOW(), "N/A", "", "Murray", "Lost")
-	VALUES (6, "Grey pencil", '2016-03-25', NOW() , NOW(), "101", "Charlie", "McCann", "Found")
-	VALUES (7, "Orange nail polish", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Sungclare", "Found")
+	 VALUES (5, "Black shiny Ray-Ban sunglasses", '2016-03-25', NOW() , NOW(), "236", "", "Snoopy", "Lost"),
+		(6, "Red Chanel leather bag", '2016-02-14', NOW() , NOW(), "319", "", "Lucy", "Lost"),
+		(10, "Rose Gold iPhone 6 Plus with clear case", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Joe", "Found"),
+		(12, "Kinky Boots plastic cup", '2014-01-25', NOW() , NOW(), "131", "", "Zika", "Lost"),
+		(16, "Black Lenovo Yoga laptop", '2016-03-25', NOW() , NOW(), "234", "Charlie", "Lucy", "Found"),
+		(17, "White Galaxy Notes 7", '2016-03-25', NOW() , NOW(), "216", "Wendy", "Cool Joe", "Found"),
+		(11, "Pink JBL wireless headset", '2016-03-25', NOW() , NOW(), "N/A", "", "Cool Joe", "Lost"),
+		(7, "Brown Chanel leather bag", '2016-03-25', NOW() , NOW(), "234", "Sam", "Sung", "Found"),
+		(1, "Yellow long umbrella", '2016-03-25', NOW() , NOW(), "142", "", "Peter", "Lost"),
+		(3, "Green slippers", '2016-03-25', NOW() , NOW(), "N/A", "", "Murray", "Lost"),
+		(6, "Grey pencil", '2016-03-25', NOW() , NOW(), "101", "Charlie", "McCann", "Found"),
+		(7, "Orange nail polish", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Sungclare", "Found");
+
 	

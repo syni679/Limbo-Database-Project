@@ -24,36 +24,35 @@ INSERT INTO users (first_name, email, pass)
 		   ("Snow", "snow.jon@got.com" , "1sc0m1ng");
 	
 #Create loststuff table
+DROP TABLE IF EXISTS loststuff;
 CREATE TABLE IF NOT EXISTS loststuff (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	item_name TEXT NOT NULL,
 	description TEXT NOT NULL,
 	location_name TEXT NOT NULL,
-	#room TEXT DEFAULT 'N/A',
 	lost_date DATETIME NOT NULL,
 	create_date DATETIME NOT NULL,
 	update_date DATETIME NOT NULL,
-	owner_name TEXT DEFAULT 'Anonymous',
-	status SET('Lost') NOT NULL
+	owner_name TEXT NOT NULL
 );
 
 #Create foundstuff table
+DROP TABLE IF EXISTS foundstuff;
 CREATE TABLE IF NOT EXISTS foundstuff (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	finder_name TEXT DEFAULT 'Anonymous',
-	phone_number CHAR(10) TEXT NOT NULL 
-	email TEXT NOT NULL
+	finder_name TEXT NOT NULL,
+	phone_number CHAR(10),
+	email TEXT NOT NULL,
 	item_name TEXT NOT NULL,
 	description TEXT NOT NULL,
 	location_name TEXT NOT NULL,
-	#room TEXT DEFAULT 'N/A',
 	found_date DATETIME NOT NULL,
 	create_date DATETIME NOT NULL,
-	update_date DATETIME NOT NULL,
-	status SET('Found', 'Claimed') NOT NULL
+	update_date DATETIME NOT NULL
 );
 
 #Create locations table
+DROP TABLE IF EXISTS locations;
 CREATE TABLE IF NOT EXISTS locations (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	create_date DATETIME NOT NULL,
@@ -97,5 +96,6 @@ INSERT INTO locations (create_date, update_date, name)
 			(NOW(), NOW(), "Murray Student Center/Music Building"),
 			(NOW(), NOW(), "Lower West Cedar Townhouses"),
 			(NOW(), NOW(), "Upper West Cedar Townhouse");
-			
 
+INSERT INTO foundstuff(finder_name, phone_number, email, item_name, description, location_name, found_date)
+	VALUES ("KAI", "8888888888", "kwwong15@punahou.edu", "Horse", "A stallion", "Hancock Center", "2016-04-16");

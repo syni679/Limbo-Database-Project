@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <link href="Found.css" type="text/css" rel="stylesheet">
+<link href="home.css" type="text/css" rel="stylesheet">
 <title>Found</title>
 </head>
 <body>
 <?php
 # Connect to MySQL server and the database
-require( 'includes/connect_db.php' ) ;
-
+require( 'includes/connect_limbo_db.php' ) ;
 # Includes these helper functions
-require( 'includes/limbohelpers.php' ) ;
-
+require( 'includes/limbo_helpers.php' ) ;
 # Check to make sure it is the first time user is visiting the page
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$username = "";
@@ -21,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$name = "";
 	$description = "";
 }
-
 # Check to make sure the form method is post
 if ($_SERVER[ 'REQUEST_METHOD' ] == 'POST') {
     $username = $_POST['username']; 
@@ -34,7 +32,6 @@ if ($_SERVER[ 'REQUEST_METHOD' ] == 'POST') {
 	
 	#Make sure user is inputting values into number, first name, and last name
     #Display error message if user does not input required values
-
 	#Creating an error array to store the errors
 	$error = array();
 	
@@ -73,16 +70,28 @@ else if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	if(isset($_GET['id']))
 		show_record($dbc, $_GET['id']);
 }
-
 # Show the records
 show_link_records($dbc);
-
 # Close the connection
 mysqli_close( $dbc ) ;
 ?>
 
 <img src="maristlogo.png" id="maristlogo">
 <br><br>
+<div style="position: relative; left: 0; top: 0;">
+	
+<ul>
+  <li><a href="Home.html">Home</a></li>
+  <li><a href="Lost.php">Lost</a></li>
+  <li><a href="Found.php">Found</a></li>
+  <li><a href="admin_login.php">Admin</a></li>
+</ul>
+	<img src="white.jpg" height="500" width="1000" style="opacity: 0.8; position: relative; top: -136px; left: 100px;"/>
+	<img src="homedoge.jpg" height="400" width="500" style="position: absolute; top: 50px; left: 500px;"/>
+	
+<!-- Get inputs from the user. -->
+<div style="position: relative; bottom: 500px; left: 150px;"> 
+<h1>Found Something?</h1>
 <form action ="Found.php" method = "POST">
 	Your Name: <input type="text" name="username" value="<?php if (isset($_POST['username'])) echo $_POST['username'];?>")><br>
 	Phone Number: <input type="text" name="phone" value="<?php if (isset($_POST['phone'])) echo $_POST['phone'];?>")><br>
@@ -94,5 +103,7 @@ mysqli_close( $dbc ) ;
 	Approx. Date Lost: <input type="date" name="date" value="<?php if (isset($_POST['date'])) echo $_POST['date'];?>")>
 <input type = "submit" >
 </form>
+</div>
+</div>
 </body>
 </html>

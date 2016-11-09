@@ -17,24 +17,40 @@ CREATE TABLE IF NOT EXISTS users (
 	reg_date DATETIME NOT NULL
 );
 
-#Populate users table with one user (admin)
+#Populate users table with user
 INSERT INTO users (first_name, email, pass)
 	VALUES ("admin", "jae.lee2@marist.edu" , "gaze11e"),
 		   ("Jon", "jon.snow@got.com" , "W1nt3r"),
 		   ("Snow", "snow.jon@got.com" , "1sc0m1ng");
 	
-#Create stuff table
-CREATE TABLE IF NOT EXISTS stuff (
+#Create loststuff table
+CREATE TABLE IF NOT EXISTS loststuff (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	location_id INT NOT NULL,
+	item_name TEXT NOT NULL,
 	description TEXT NOT NULL,
+	location_name TEXT NOT NULL,
+	#room TEXT DEFAULT 'N/A',
+	lost_date DATETIME NOT NULL,
+	create_date DATETIME NOT NULL,
+	update_date DATETIME NOT NULL,
+	owner_name TEXT DEFAULT 'Anonymous',
+	status SET('Lost') NOT NULL
+);
+
+#Create foundstuff table
+CREATE TABLE IF NOT EXISTS foundstuff (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	finder_name TEXT DEFAULT 'Anonymous',
+	phone_number CHAR(10) TEXT NOT NULL 
+	email TEXT NOT NULL
+	item_name TEXT NOT NULL,
+	description TEXT NOT NULL,
+	location_name TEXT NOT NULL,
+	#room TEXT DEFAULT 'N/A',
 	found_date DATETIME NOT NULL,
 	create_date DATETIME NOT NULL,
 	update_date DATETIME NOT NULL,
-	room TEXT,
-	owner_name TEXT,
-	finder_name TEXT,
-	status SET('found', 'lost', 'claimed') NOT NULL
+	status SET('Found', 'Claimed') NOT NULL
 );
 
 #Create locations table
@@ -82,18 +98,4 @@ INSERT INTO locations (create_date, update_date, name)
 			(NOW(), NOW(), "Lower West Cedar Townhouses"),
 			(NOW(), NOW(), "Upper West Cedar Townhouse");
 			
-INSERT INTO stuff(location_id, description, found_date, create_date, update_date, room, owner_name, finder_name, status)
-	 VALUES (5, "Black shiny Ray-Ban sunglasses", '2016-03-25', NOW() , NOW(), "236", "", "Snoopy", "Lost"),
-		(6, "Red Chanel leather bag", '2016-02-14', NOW() , NOW(), "319", "", "Lucy", "Lost"),
-		(10, "Rose Gold iPhone 6 Plus with clear case", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Joe", "Found"),
-		(12, "Kinky Boots plastic cup", '2014-01-25', NOW() , NOW(), "131", "", "Zika", "Lost"),
-		(16, "Black Lenovo Yoga laptop", '2016-03-25', NOW() , NOW(), "234", "Charlie", "Lucy", "Found"),
-		(17, "White Galaxy Notes 7", '2016-03-25', NOW() , NOW(), "216", "Wendy", "Cool Joe", "Found"),
-		(11, "Pink JBL wireless headset", '2016-03-25', NOW() , NOW(), "N/A", "", "Cool Joe", "Lost"),
-		(7, "Brown Chanel leather bag", '2016-03-25', NOW() , NOW(), "234", "Sam", "Sung", "Found"),
-		(1, "Yellow long umbrella", '2016-03-25', NOW() , NOW(), "142", "", "Peter", "Lost"),
-		(3, "Green slippers", '2016-03-25', NOW() , NOW(), "N/A", "", "Murray", "Lost"),
-		(6, "Grey pencil", '2016-03-25', NOW() , NOW(), "101", "Charlie", "McCann", "Found"),
-		(7, "Orange nail polish", '2016-03-25', NOW() , NOW(), "N/A", "Charlie", "Sungclare", "Found");
 
-	

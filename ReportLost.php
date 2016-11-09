@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link href="ReportLost.css" type="text/css" rel="stylesheet">
-<title>Found</title>
+<title>ReportLost</title>
 </head>
 <body>
 <?php

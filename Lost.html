@@ -3,17 +3,34 @@
 <head>
 <meta charset="utf-8">
 <link href="lost.css" type="text/css" rel="stylesheet">
+<link href="home.css" type="text/css" rel="stylesheet">
 <title>Lost</title>
 </head>
 <body>
 <img src="maristlogo.png" id="maristlogo">
 <br><br>
-<form>
+<div style="position: relative; left: 0; top: 0;">
+	
+<ul>
+  <li><a href="Home.html">Home</a></li>
+  <li><a href="Lost.html">Lost</a></li>
+  <li><a href="Found.html">Found</a></li>
+  <li><a href="Admin.html">Admin</a></li>
+</ul>
+	<img src="white.jpg" height="500" width="1000" style="opacity: 0.8; position: relative; top: -136px; left: 100px;"/>
+	<img src="lost_doge.jpg" height="400" width="500" style="position: absolute; top: 50px; left: 500px;"/>
+	<!-- <button id="butlost" class="button" onclick = "location.href='next.html'" type="button">Lost Something?</button>
+	<button id="butfound" class="button">Found Something?</button>
+	<button id="butadmin" class="button">Administrator<button> -->
+	<h1 style="position: relative; bottom: 600px; left: 150px;"> Lost Something? </h1>
+	<form style="position: relative; bottom: 600px; left: 150px;">
 	Name of Item: <input type="text"></input><br>
 	Description of Item: <input type="text"></input><br>
 	Location Item Was Lost: <select name="Locations"><option value="Hancock">Hancock</option></select><br>
 	Approx. Date Lost: <input type="date" name="lost">
-</form>
+	</form>
+	</div>
+
 <button type="button">Submit</button>
 </body>
 </html>
